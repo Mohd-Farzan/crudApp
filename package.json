@@ -4,8 +4,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "build":"npm install && npm install --prefix client && npm run build --prefix client",
+    "start": "node backend/server.js",
+    "build":"npm install --prefix client && npm run build --prefix client",
     "dev": "nodemon backend/server.js"
   },
   "author": "",
