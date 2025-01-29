@@ -3,19 +3,19 @@ import dbCon from "./utils/db.js"
 import  dotenv  from "dotenv"
 import cors from "cors"
 import routers from "./routes/routes.js"
+import path from "path"
 
 dotenv.config()
-const app=express()
-
-
 dbCon()
+const app=express()
+const _dirname=path.resolve()
 app.use(express.json())
 app.use(cors())
 app.use('/api',routers)
-app.post('/api/register', (req, res) => {
-    console.log(req.body); // Inspect the received data
-    // Handle registration logic
-  });
+app.use(express.static(path.join(_dirname,"/Client/dist")))
+app.get('*',(req,res)=>{
+  res.sendFile(path.resolve(_dirname,"Client","dist","index.html"))
+})
 app.listen(process.env.PORT,()=>{
 console.log('server is running')
 })
