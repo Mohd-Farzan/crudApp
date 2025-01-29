@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/api',routers)
 app.use(express.static(path.join(_dirname,"/Client/dist")))
-app.get('*',(req,res)=>{
+app.get('*',(_,res)=>{
   res.sendFile(path.resolve(_dirname,"Client","dist","index.html"))
 })
 app.listen(process.env.PORT,()=>{

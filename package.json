@@ -4,9 +4,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon backend/server.js",
-    "build":"npm install && npm install --prefix Client && npm run build --prefix Client",
-    "start": "nodemon backend/server.js"
+    "start": "nodemon backend/server.js",
+    "build":"npm install && npm install --prefix client && npm run build --prefix client",
+    "dev": "nodemon backend/server.js"
   },
   "author": "",
   "license": "ISC",
