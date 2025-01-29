@@ -12,9 +12,9 @@ const _dirname=path.resolve()
 app.use(express.json())
 app.use(cors())
 app.use('/api',routers)
-app.use(express.static(path.join(_dirname,"/Client/dist")))
+app.use(express.static(path.join(_dirname,"/client/dist")))
 app.get('*',(_,res)=>{
-  res.sendFile(path.resolve(_dirname,"Client","dist","index.html"))
+  res.sendFile(path.resolve(_dirname,"client","dist","index.html"))
 })
 app.listen(process.env.PORT,()=>{
 console.log('server is running')
